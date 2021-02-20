@@ -42,7 +42,9 @@
 
 <body>
 
+	<div id="loader"></div>
 <!-- home section starts -->
+<section id="main-body-container">
 	<section class="home">
 
 		<nav class="fixed-top">
@@ -71,8 +73,8 @@
 
 		<div class="caption">
 			<div class="intro text-center">
-				<h1> Hello!&nbsp;I’m&nbsp;Direwen</h1>
-				<p>From&nbsp;Computer&nbsp;Science&nbsp;Major&nbsp;of&nbsp;UCSY</p>
+				<h1> Hello! I’m&nbsp;Direwen</h1>
+				<p>From Computer&nbsp;Science&nbsp;Major&nbsp;of&nbsp;UCSY</p>
 				<a href="#aboutme" title="">Take A Tour</a>
 			</div>
 		</div>
@@ -291,10 +293,10 @@
 				<div class="divider"></div>
 			</div>
 
-			<div class="project-display" data-aos="fade-right">
+			<div class="project-display">
 				<div class="row">
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-right">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/facebookUI.png">
 
@@ -307,9 +309,9 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-left">
 						<figure class="fig imghvr-zoom-in">
-						    <img src="img/h4.png">
+						    <img src="img/h4.PNG">
 
 						    <figcaption>
 						        <h3  class="text-center">Fitness Hercules Gym &nbsp;Full&nbsp;Design</h3>
@@ -320,7 +322,7 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-right">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/hercules.png">
 
@@ -334,7 +336,7 @@
 					</div>
 
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-left">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/cal.png">
 
@@ -347,9 +349,9 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-right">
 						<figure class="fig imghvr-zoom-in">
-						    <img src="img/menu.png">
+						    <img src="img/menu.PNG">
 
 						    <figcaption>
 						        <h3  class="text-center">Restaurant Website</h3>
@@ -360,7 +362,7 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-left">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/mmsx.png">
 
@@ -373,7 +375,7 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-right">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/conno.png">
 
@@ -386,20 +388,20 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-left">
 						<figure class="fig imghvr-zoom-in">
-						    <img src="img/conoOLD.png">
+						    <img src="img/todolist.png">
 
 						    <figcaption>
-						        <h3  class="text-center">Anime Connoiseur Website&nbsp;(2019 design)</h3>
+						        <h3  class="text-center">To DO List App</h3>
 						        <div class="divider"></div>
 						        <h5>Languages that i used for this project</h5>
-						        <p>html5, css3, Bootstrap </p>
+						        <p>html5, css3, Javascript </p>
 						    </figcaption>
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-right">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/bagan.png">
 
@@ -412,7 +414,7 @@
 						</figure>
 					</div>
 
-					<div class="col-md-6 each-project">
+					<div class="col-md-6 each-project" data-aos="fade-left">
 						<figure class="fig imghvr-zoom-in">
 						    <img src="img/template.png">
 
@@ -488,7 +490,9 @@
 			</form>
 		</div>
 		</div>
-	</div>
+	</div><!-- main body cotainer ends -->
+
+</section>	
 </body>
 
 	<!-- jquery -->
@@ -619,6 +623,38 @@
     	// once: true
     });
 
+// Loading
+
+	var loader ;
+
+
+  function loadNow(opacity){
+    if(opacity<=0){
+      displayContent();
+    }
+    else{
+      loader.style.opacity=opacity;
+      window.setTimeout(function()
+      {
+        loadNow(opacity - 0.05)
+      },100);
+
+    }
+  }
+////////////
+function displayContent() {
+
+  loader.style.display='none';
+
+  document.getElementById('main-body-container').style.display='block';
+}
+
+
+document.addEventListener("DOMContentLoaded",function()
+{
+  loader=document.getElementById('loader');
+  loadNow(.9);
+});
 	</script>
 
 </html>
