@@ -18,6 +18,10 @@
 	box-sizing: border-box;
 }
 
+html{
+	overflow-x: hidden;
+}
+
 body{
 	font-size: 14px;
 	font-family: 'Roboto Slab', serif;
@@ -32,7 +36,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
+#loader{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width:100vw;
+  height:100vh;
+z-index: 9999;
+/* overflow:visible; */
+background:#4a484b url("https://i.pinimg.com/originals/bf/34/61/bf34611d89cb4e9e62fc4997a1d329f2.gif") no-repeat center;
+animation:all 1s ease ;
+background-size: cover;
+}
 
 /************************** HOME CSS */
 .home{
@@ -87,7 +103,7 @@ nav{
 	top: 0;
 	left: 0;
 	right: 0;
-	
+		
 	transition: all .5s ease;
 	/* display: none; */
 }
@@ -1165,7 +1181,11 @@ nav{
 	}
 
 	.caption h1{
-		font-size: 2rem;
+		font-size: 2.5rem;
+	}
+
+	.caption p{
+		font-size: 1rem !important;
 	}
 
  	.projects{
@@ -1236,7 +1256,7 @@ nav{
 	}
 
 	.caption h1{
-		font-size: 1.5rem;
+		font-size: 2rem;
 		letter-spacing: 5px;
 		text-shadow: 4px 4px 0px var(--darkprimary);
 	}
@@ -1244,7 +1264,7 @@ nav{
 	
 
 	.intro p{
-		font-size: .6rem;
+		font-size: .8rem;
 		font-weight: bold;
 	}
 
@@ -1364,13 +1384,14 @@ nav{
 	}
 
 	.caption h1{
-		font-size: 1.3rem;
+		font-size: 2rem;
+		text-wrap: wrap;
 		letter-spacing: 4px;
 		text-shadow: 3px 3px 0px var(--darkprimary);
 	}
 
 	.intro p{
-		font-size: .4rem;
+		font-size: .8rem;
 		font-weight: bold;
 	}
 
@@ -1484,6 +1505,18 @@ nav{
   	.name-input input, .mail-input input, .message-input textarea{
   		font-size: .9rem;
   	}
+
+  	/* .call-container .box{
+  		height: 100%;
+  	}
+
+  	.call-form{
+  		height: 100%;
+  	}
+
+  	.call-btn{
+  		margin-top: 50px;
+  	} */
 }
 
 @media (max-width: 780px){
@@ -1562,7 +1595,7 @@ nav{
 		clip-path: circle(100px at 100% -20%);
 		/* to work on other browsers */
 		-webkit-clip-path: circle(100px at 100% -20% );
-		transition: all .5s ease-in-out;
+		transition: all .2s ease-in-out;
 		pointer-events: none; 
 		z-index: 80;
 	}
@@ -1615,6 +1648,11 @@ nav{
 	.intro p{
 		text-align: center;
 	}
+
+	.contact-each-section:nth-child(1) .contact-me{
+		margin-top: 30px !important;
+	}
+
 
 }
 /*============ BOOTSTRAP BREAK POINTS:
